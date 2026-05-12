@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Product Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="top-nav">
+      <a class="brand" href="#" aria-label="Amazon home">
+        <span class="brand-accent">A</span><span class="brand-mark">mazon</span>
+      </a>
+
+      <a class="delivery" href="#" aria-label="Choose delivery location">
+        <span class="nav-small">Deliver to</span>
+        <span class="nav-strong">Tel Aviv 301000</span>
+      </a>
+
+      <form class="search" action="#" method="get" role="search" aria-label="Product search">
+        <label class="sr-only" for="category">Search category</label>
+        <select id="category" name="category" aria-label="Search category">
+          <option>All</option>
+          <option>Electronics</option>
+          <option>Home</option>
+          <option>Books</option>
+          <option>Outdoors</option>
+        </select>
+        <label class="sr-only" for="search-field">Search Amazon</label>
+        <input id="search-field" name="q" type="search" placeholder="Search Amazon">
+        <button type="submit" aria-label="Submit search">Search</button>
+      </form>
+
+      <nav class="account-nav" aria-label="Account navigation">
+        <a href="#">
+          <span class="nav-small">Hello, sign in</span>
+          <span class="nav-strong">Account</span>
+        </a>
+        <a href="#">
+          <span class="nav-small">Returns</span>
+          <span class="nav-strong">Orders</span>
+        </a>
+        <a class="cart-link" href="#" aria-label="Cart with zero items">
+          <span class="cart-icon" aria-hidden="true">Cart</span>
+          <span class="nav-strong">0</span>
+        </a>
+      </nav>
+    </div>
+
+    <nav class="secondary-nav" aria-label="Secondary navigation">
+      <a class="menu-link" href="#">All</a>
+      <a href="#">Today&apos;s Deals</a>
+      <a href="#">Customer Service</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Sell</a>
+      <a href="#">Registry</a>
+      <a href="#">New Releases</a>
+      <a href="#">Smart Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-shell" aria-labelledby="product-title">
+      <div class="gallery" aria-label="Product images">
+        <div class="thumbnail-column">
+          <button class="thumb is-active" type="button" aria-label="View front image">
+            <img src="assets/speaker-main.jpg" alt="Front view thumbnail of Aurora Sound Mini">
+          </button>
+          <button class="thumb" type="button" aria-label="View side image">
+            <img src="assets/speaker-desk.jpg" alt="Desk setup thumbnail of Aurora Sound Mini">
+          </button>
+          <button class="thumb" type="button" aria-label="View box image">
+            <img src="assets/speaker-top.jpg" alt="Top detail thumbnail of Aurora Sound Mini">
+          </button>
+          <button class="thumb" type="button" aria-label="View lifestyle image">
+            <img src="assets/portable-speaker.jpg" alt="Portable speaker lifestyle thumbnail">
+          </button>
+        </div>
+
+        <figure class="main-image">
+          <img src="assets/speaker-main.jpg" alt="Aurora Sound Mini wireless speaker in graphite finish on a desk">
+          <figcaption>Roll over image to zoom</figcaption>
+        </figure>
+      </div>
+
+      <article class="product-summary">
+        <p class="brand-link">Visit the Northline Audio Store</p>
+        <h1 id="product-title">Aurora Sound Mini Portable Wireless Speaker with 18-Hour Battery, Water-Resistant Shell, and Room-Fill Mode</h1>
+
+        <div class="rating-row" aria-label="Rated 4.6 out of 5 stars">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <a href="#">4.6</a>
+          <span class="divider"></span>
+          <a href="#">3,842 ratings</a>
+        </div>
+
+        <p class="badge">Choice pick in compact wireless speakers</p>
+
+        <hr>
+
+        <div class="price-block">
+          <p class="deal-label">Limited time deal</p>
+          <p class="price"><span class="currency">$</span>48<span class="cents">.90</span></p>
+          <p class="list-price">List price: <s>$69.99</s> <span>Save 30%</span></p>
+          <p class="tax-note">No import fees shown. Shipping calculated at checkout.</p>
+        </div>
+
+        <div class="option-group" aria-labelledby="color-heading">
+          <h2 id="color-heading">Color: <span>Graphite</span></h2>
+          <div class="swatches">
+            <label class="swatch is-selected">
+              <input type="radio" name="color" checked>
+              <span class="swatch-dot graphite"></span>
+              <span>Graphite</span>
+            </label>
+            <label class="swatch">
+              <input type="radio" name="color">
+              <span class="swatch-dot mist"></span>
+              <span>Mist</span>
+            </label>
+            <label class="swatch">
+              <input type="radio" name="color">
+              <span class="swatch-dot coral"></span>
+              <span>Coral</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="option-group" aria-labelledby="style-heading">
+          <h2 id="style-heading">Style</h2>
+          <div class="style-options">
+            <label class="style-card is-selected">
+              <input type="radio" name="style" checked>
+              <span>Speaker only</span>
+              <strong>$48.90</strong>
+            </label>
+            <label class="style-card">
+              <input type="radio" name="style">
+              <span>Speaker + case</span>
+              <strong>$59.40</strong>
+            </label>
+            <label class="style-card">
+              <input type="radio" name="style">
+              <span>Pair bundle</span>
+              <strong>$92.00</strong>
+            </label>
+          </div>
+        </div>
+
+        <section class="quick-specs" aria-label="Key product details">
+          <dl>
+            <div>
+              <dt>Connectivity</dt>
+              <dd>Bluetooth 5.3</dd>
+            </div>
+            <div>
+              <dt>Battery life</dt>
+              <dd>Up to 18 hours</dd>
+            </div>
+            <div>
+              <dt>Water rating</dt>
+              <dd>IPX6 splash resistant</dd>
+            </div>
+            <div>
+              <dt>Weight</dt>
+              <dd>1.1 lb</dd>
+            </div>
+          </dl>
+        </section>
+      </article>
+
+      <aside class="purchase-box" aria-label="Purchase options">
+        <p class="side-price"><span>$</span>48<span>.90</span></p>
+        <p class="shipping">Fast delivery <strong>Wednesday, May 6</strong>. Order within 8 hrs 22 mins.</p>
+        <p class="location-note">Delivering to Tel Aviv 301000</p>
+        <p class="stock">In Stock</p>
+
+        <label for="quantity">Quantity</label>
+        <select id="quantity" name="quantity">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <button class="btn add-cart" type="button">Add to Cart</button>
+        <button class="btn buy-now" type="button">Buy Now</button>
+
+        <dl class="seller-info">
+          <div>
+            <dt>Ships from</dt>
+            <dd>Amazon</dd>
+          </div>
+          <div>
+            <dt>Sold by</dt>
+            <dd>Northline Audio</dd>
+          </div>
+          <div>
+            <dt>Returns</dt>
+            <dd>30-day returns</dd>
+          </div>
+        </dl>
+
+        <p class="secure">Secure transaction</p>
+        <label class="gift-option">
+          <input type="checkbox">
+          Add a gift receipt for easy returns
+        </label>
+      </aside>
+    </section>
+
+    <section class="details-layout" aria-label="Product details">
+      <article class="card specs-card">
+        <h2>Product Information</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row">Brand</th>
+              <td>Northline Audio</td>
+            </tr>
+            <tr>
+              <th scope="row">Model Name</th>
+              <td>Aurora Sound Mini</td>
+            </tr>
+            <tr>
+              <th scope="row">Speaker Type</th>
+              <td>Portable wireless</td>
+            </tr>
+            <tr>
+              <th scope="row">Recommended Uses</th>
+              <td>Home office, patio, travel, dorm room</td>
+            </tr>
+            <tr>
+              <th scope="row">Included Components</th>
+              <td>Speaker, USB-C cable, quick guide</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card about-card">
+        <h2>About This Item</h2>
+        <ul>
+          <li>Compact speaker tuned for balanced vocals, warm bass, and clear podcasts without taking over your desk.</li>
+          <li>Room-Fill Mode widens the soundstage for small gatherings, study sessions, and weekend playlists.</li>
+          <li>Durable water-resistant shell helps protect against splashes by the sink, pool, or campsite.</li>
+          <li>USB-C charging and an 18-hour battery make it easy to keep music moving through the day.</li>
+          <li>Pair two speakers for stereo sound using the built-in dual speaker mode.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="description card" aria-labelledby="description-title">
+      <h2 id="description-title">Product Description</h2>
+      <p>The Aurora Sound Mini is designed for people who want a dependable everyday speaker without clutter. Its textured shell feels sturdy in hand, the controls are simple to find, and the sound profile keeps playlists, video calls, and audiobooks crisp at comfortable volumes.</p>
+      <p>A reinforced carry loop, splash-resistant build, and long battery life make it a practical pick for a kitchen counter, dorm shelf, patio table, or weekend bag.</p>
+    </section>
+
+    <section class="related-products" aria-labelledby="related-title">
+      <div class="section-heading">
+        <h2 id="related-title">Related Products</h2>
+        <a href="#">See more</a>
+      </div>
+
+      <div class="product-grid">
+        <article class="related-card">
+          <img src="assets/speaker-top.jpg" alt="Close-up top view of a compact speaker">
+          <h3>Magnetic Charging Dock for Mini Speakers</h3>
+          <p class="mini-stars" aria-label="Rated 4.4 out of 5 stars">★★★★☆</p>
+          <p class="related-price">$19.95</p>
+        </article>
+        <article class="related-card">
+          <img src="assets/speaker-desk.jpg" alt="Wireless speaker on a clean white desk">
+          <h3>Soft-Shell Travel Case with Cable Pocket</h3>
+          <p class="mini-stars" aria-label="Rated 4.7 out of 5 stars">★★★★★</p>
+          <p class="related-price">$14.50</p>
+        </article>
+        <article class="related-card">
+          <img src="assets/portable-speaker.jpg" alt="Portable wireless speaker held by its handle">
+          <h3>Two-Speaker Stereo Bundle in Graphite</h3>
+          <p class="mini-stars" aria-label="Rated 4.5 out of 5 stars">★★★★☆</p>
+          <p class="related-price">$92.00</p>
+        </article>
+        <article class="related-card">
+          <img src="assets/earbuds-speaker.jpg" alt="Wireless earbuds displayed with a portable speaker">
+          <h3>USB-C Fast Charging Kit, 6 ft Cable</h3>
+          <p class="mini-stars" aria-label="Rated 4.3 out of 5 stars">★★★★☆</p>
+          <p class="related-price">$11.99</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="back-top" href="#top">Back to top</a>
+
+    <div class="footer-links">
+      <section>
+        <h2>Get to Know Us</h2>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+        <a href="#">About Amazon</a>
+        <a href="#">Investor Relations</a>
+      </section>
+      <section>
+        <h2>Make Money with Us</h2>
+        <a href="#">Sell products</a>
+        <a href="#">Become an affiliate</a>
+        <a href="#">Advertise your products</a>
+        <a href="#">Fulfillment options</a>
+      </section>
+      <section>
+        <h2>Payment Products</h2>
+        <a href="#">Rewards card</a>
+        <a href="#">Shop with points</a>
+        <a href="#">Reload your balance</a>
+        <a href="#">Currency converter</a>
+      </section>
+      <section>
+        <h2>Let Us Help You</h2>
+        <a href="#">Your account</a>
+        <a href="#">Your orders</a>
+        <a href="#">Shipping rates</a>
+        <a href="#">Help center</a>
+      </section>
+    </div>
+
+    <p class="footer-brand">Amazon</p>
+  </footer>
+</body>
+</html>
