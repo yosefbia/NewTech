@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  padding: 40px;
+}
+
+#app {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.highlight {
+  background-color: #ffeaa7;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  display: inline-block;
+  margin-top: 15px;
+  color: blue;
+}
