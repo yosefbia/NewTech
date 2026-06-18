@@ -245,3 +245,20 @@ function printReceipt(){
 //     console.log("Order stopped. Please choose only items that exist and are available.");
 // }
 
+
+
+
+
+
+
+let a = 1;
+{
+    let b = 2;
+    {
+        let c = 3;
+        console.log(a, b, c);
+
+    }
+        console.log(a, b);
+}
+console.log(a);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>2D Minecraft</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="game-container">
+  <canvas id="game" width="1400" height="900"></canvas>
+
+  <div id="hud">
+    <div id="health"></div>
+    <div id="hunger"></div>
+    <div id="xpbar"><div id="xpfill"></div><span id="xplabel">Lv 0</span></div>
+    <div id="fps">FPS: 0</div>
+    <canvas id="minimap" width="160" height="100"></canvas>
+  </div>
+
+  <div id="hotbar"></div>
+
+  <div id="inventory" class="panel hidden">
+    <h2>Inventory (E to close)</h2>
+    <div id="inv-grid"></div>
+  </div>
+
+  <div id="crafting" class="panel hidden">
+    <h2>Crafting (C to close)</h2>
+    <div id="recipes"></div>
+  </div>
+
+  <div id="pause" class="panel hidden">
+    <h2>Paused</h2>
+    <button id="resume">Resume</button>
+    <button id="save">Save</button>
+    <button id="reset">New World</button>
+  </div>
+
+  <div id="achievements"></div>
+</div>
+
+<script src="blocks.js"></script>
+<script src="saveSystem.js"></script>
+<script src="world.js"></script>
+<script src="inventory.js"></script>
+<script src="crafting.js"></script>
+<script src="mobs.js"></script>
+<script src="player.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
