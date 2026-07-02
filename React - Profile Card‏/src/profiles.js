@@ -25,10 +25,10 @@ const profiles = [
   },
   {
     id: 4,
-    name: 'Noah Katz',
+    name: 'Yosef Biadse',
     title: 'Product Manager',
-    avatar: 'https://i.pravatar.cc/150?img=68',
-    // bio left out on purpose so the "No bio provided" fallback shows up
+    avatar: '../Yosef.webp',
+    bio: 'ما بلاش تغيب عنا تاني',
   },
 ]
 
