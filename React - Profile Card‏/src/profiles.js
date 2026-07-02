@@ -27,7 +27,7 @@ const profiles = [
     id: 4,
     name: 'Yosef Biadse',
     title: 'Product Manager',
-    avatar: '../Yosef.webp',
+    avatar: '/Yosef.webp',
     bio: 'ما بلاش تغيب عنا تاني',
   },
 ]
