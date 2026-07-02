@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1f2933;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.app__heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* auto-fill keeps the cards in a neat responsive grid without media queries */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e6ea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* hover: lift the whole card and give the avatar a little nudge */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.15s ease;
+}
+
+.card:hover .card__avatar {
+  transform: scale(1.08);
+}
+
+.card__name {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.15rem;
+}
+
+.card__title {
+  margin: 0 0 0.75rem;
+  color: #52606d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card__bio {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #616e7c;
+}
