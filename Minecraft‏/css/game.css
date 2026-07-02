@@ -1,0 +1,309 @@
+/* ============================================================
+   game.css — game screen layout
+   Header, three-panel layout (tools / world / pack), the world
+   frame with its sky and decorations, and the status bar.
+   ============================================================ */
+
+.game-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- header ---------- */
+
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(16, 21, 31, 0.85);
+}
+
+.logo {
+  font-family: var(--font-pixel);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.logo .accent {
+  color: var(--accent);
+}
+
+.world-meta {
+  margin-right: auto; /* pushes the action buttons right */
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.game-header .actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- layout ---------- */
+
+.game-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 240px;
+  gap: 18px;
+  align-items: start;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 18px 22px 26px;
+}
+
+/* ---------- toolbar ---------- */
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font: 600 14px var(--font-body);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.tool:hover {
+  border-color: #40506d;
+  transform: translateX(2px);
+}
+
+.tool svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: var(--muted);
+}
+
+.tool kbd {
+  margin-left: auto;
+}
+
+.tool.selected {
+  border-color: var(--accent);
+  background: rgba(110, 203, 99, 0.12);
+}
+
+.tool.selected svg {
+  color: var(--accent);
+}
+
+/* ---------- world ---------- */
+
+.world-frame {
+  overflow-x: auto; /* worlds wider than the screen just scroll */
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, #55a3de 0%, #8fcdf2 55%, #bce4f9 100%);
+}
+
+.world-stage {
+  position: relative;
+  width: max-content;
+  min-width: 100%;
+}
+
+.world {
+  --tile: 38px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 24), var(--tile));
+  width: max-content;
+  margin-inline: auto;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Sun + clouds live behind the grid and only peek through
+   transparent sky tiles. */
+.sky-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sun {
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe792 0 48%, rgba(255, 231, 146, 0.35) 49% 62%, transparent 63%);
+}
+
+.cloud {
+  position: absolute;
+  width: 64px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow:
+    16px -8px 0 -2px rgba(255, 255, 255, 0.75),
+    34px -3px 0 -4px rgba(255, 255, 255, 0.7);
+  animation: drift linear infinite;
+}
+
+.cloud-1 {
+  top: 34px;
+  left: -80px;
+  animation-duration: 55s;
+}
+
+.cloud-2 {
+  top: 72px;
+  left: -80px;
+  animation-duration: 85s;
+  animation-delay: -35s;
+}
+
+@keyframes drift {
+  to {
+    transform: translateX(2600px);
+  }
+}
+
+/* ---------- status bar ---------- */
+
+.status {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 12px 0 0;
+  padding: 11px 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--panel);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.status[data-kind='success'] {
+  border-color: rgba(110, 203, 99, 0.5);
+  color: #b6e8af;
+}
+
+.status[data-kind='error'] {
+  border-color: rgba(255, 122, 107, 0.5);
+  color: #ffb4aa;
+}
+
+.status.flash {
+  animation: flash 0.35s ease;
+}
+
+@keyframes flash {
+  from {
+    transform: translateY(3px);
+    opacity: 0.4;
+  }
+}
+
+/* ---------- pack / inventory ---------- */
+
+.inventory-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 10px;
+  min-height: 66px;
+}
+
+.slot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 2px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.slot:hover {
+  border-color: #40506d;
+  transform: translateY(-2px);
+}
+
+.slot.selected {
+  border-color: var(--accent);
+  background: rgba(110, 203, 99, 0.12);
+}
+
+.slot .count {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  min-width: 20px;
+  padding: 1px 5px;
+  border: 2px solid var(--panel);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 700 11px/1.5 var(--font-body);
+  text-align: center;
+}
+
+.empty-hint {
+  grid-column: 1 / -1;
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  text-align: center;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1500px) {
+  .world { --tile: 34px; }
+}
+
+@media (max-width: 1280px) {
+  .world { --tile: 30px; }
+}
+
+@media (max-width: 1080px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tool {
+    width: auto;
+    flex: 1 1 150px;
+  }
+
+  .world { --tile: 34px; }
+}
+
+@media (max-width: 640px) {
+  .game-header {
+    flex-wrap: wrap;
+  }
+
+  .world { --tile: 30px; }
+}
