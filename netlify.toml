@@ -1,0 +1,6 @@
+# Netlify configuration for this repo — serves the Minecraft game.
+# Note: the folder name ends with an invisible right-to-left mark
+# (U+200F), kept exact below so it never has to be typed by hand.
+
+[build]
+  publish = "Minecraft‏"
